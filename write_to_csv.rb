@@ -19,11 +19,10 @@ CSV.foreach("apartments.csv", headers: true, header_converters: :symbol) do |row
   end
 end
 
-if ARGV[0] == "by_rent"
-  apartments = apartments.sort_by { |apartment| -apartment.rent.to_i }
-end
-
-apartments.each do |apartment|
-  puts apartment.to_s
+CSV.open("new_awesome_csv.csv", "w") do |csv|
+  csv << ['type','rent','square_feet','room_count','bathroom_count','pets_allowed']
+  apartments.each do |apartment|
+    csv << apartment.to_csv
+  end
 end
 

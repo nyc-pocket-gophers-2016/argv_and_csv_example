@@ -19,6 +19,10 @@ class Apartment
     "$#{rent}, #{square_feet}sqft, #{room_count} rooms, #{bathroom_count} bathrooms"
   end
 
+  def to_csv
+    ["$#{rent}", square_feet, room_count, bathroom_count, pets_allowed?]
+  end
+
   private
 
   def broker_fees

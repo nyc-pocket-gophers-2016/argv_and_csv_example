@@ -7,4 +7,8 @@ class Townhouse < Apartment
 
     super
   end
+
+  def to_csv
+    ['townhouse'] + super
+  end
 end

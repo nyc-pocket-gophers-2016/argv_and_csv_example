@@ -7,4 +7,8 @@ class OneBedroom < Apartment
     
     super
   end
+
+  def to_csv
+    ['one-bedroom'] + super
+  end
 end

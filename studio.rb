@@ -7,4 +7,8 @@ class Studio < Apartment
     
     super
   end
+
+  def to_csv
+    ['studio'] + super
+  end
 end
